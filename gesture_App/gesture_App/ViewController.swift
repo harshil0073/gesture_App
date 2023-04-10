@@ -34,10 +34,23 @@ class ViewController: UIViewController {
     }
     
     @IBAction func didLongPress(_ sender: UILongPressGestureRecognizer) {
+        if sender.state.rawValue == 1 {
+            
+            print("Long Press Detected")
+            tapCount = 0
+            tapCountLabel.text = "\(tapCount)"
+            self.performSegue(withIdentifier: "showThird", sender: self)
+        }
         
     }
     
     @IBAction func didPanGesture(_ sender: UIPanGestureRecognizer) {
+        if(sender.state.rawValue == 1) {
+            print("Pan Gesture Detected")
+            tapCount = 0
+            tapCountLabel.text = "\(tapCount)"
+            self.performSegue(withIdentifier: "showThird", sender: self)
+        }
     }
 }
 
