@@ -31,20 +31,48 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BCI-vD-pUi">
+                                <rect key="frame" x="194" y="424" width="27" height="48"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BCI-vD-pUi" secondAttribute="bottom" constant="390" id="11I-Hd-MXd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BCI-vD-pUi" secondAttribute="trailing" constant="193" id="IQK-mn-a43"/>
+                            <constraint firstItem="BCI-vD-pUi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="336" id="IbE-QF-ICy"/>
+                            <constraint firstItem="BCI-vD-pUi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="194" id="uZv-Tv-rUx"/>
+                        </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="Veg-r7-fqh" appends="YES" id="Mdk-oc-Xoi"/>
                             <outletCollection property="gestureRecognizers" destination="3dK-FU-SY7" appends="YES" id="Hcr-yC-Z4G"/>
-                            <outletCollection property="gestureRecognizers" destination="fmu-9Z-oNE" appends="YES" id="jdt-Ed-ea0"/>
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="Z2E-Ti-Yg1"/>
+                    <connections>
+                        <outlet property="myView" destination="8bC-Xf-vdC" id="9Di-SK-tpd"/>
+                        <outlet property="tapCountLabel" destination="BCI-vD-pUi" id="M6r-I6-6J3"/>
+                        <segue destination="Rpz-gh-uKd" kind="show" identifier="showSecond" id="RQD-gd-L1P"/>
+                        <segue destination="Iwk-cR-PHk" kind="show" identifier="showThird" id="ZIr-aT-I3B"/>
+                        <segue destination="Jbs-h9-TKo" kind="show" identifier="showForth" id="B8x-Wy-g8I"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="Veg-r7-fqh"/>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="3dK-FU-SY7"/>
+                <tapGestureRecognizer id="Veg-r7-fqh">
+                    <connections>
+                        <action selector="didTap:" destination="BYZ-38-t0r" id="5Vo-eb-H5r"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="3dK-FU-SY7">
+                    <connections>
+                        <action selector="didLongPress:" destination="BYZ-38-t0r" id="T62-DG-njn"/>
+                    </connections>
+                </pongPressGestureRecognizer>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="fmu-9Z-oNE"/>
             </objects>
             <point key="canvasLocation" x="106" y="78"/>
@@ -59,6 +87,7 @@
                         <viewLayoutGuide key="safeArea" id="bXl-ax-iCT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="8Qf-JI-CTb"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZRA-gq-GVz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -74,6 +103,7 @@
                         <viewLayoutGuide key="safeArea" id="xiG-q3-QWw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="gun-Cm-Kbd"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O6f-j1-W67" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -95,6 +125,7 @@
                             <outletCollection property="gestureRecognizers" destination="TKs-dj-Oc9" appends="YES" id="7cj-F3-t8y"/>
                         </connections>
                     </view>
+                    <navigationItem key="navigationItem" id="iPc-il-nsf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2yC-2W-O5Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <pinchGestureRecognizer id="r8J-NL-g8x"/>
