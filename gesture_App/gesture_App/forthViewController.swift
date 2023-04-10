@@ -8,22 +8,30 @@
 import UIKit
 
 class forthViewController: UIViewController {
-
+    private let myView: UIView = {
+        let myView = UIView()
+        myView.backgroundColor = .systemPurple
+        return myView
+        
+    }()
+    private let size: CGFloat = 200
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        view.addSubview(myView)
+        myView.frame = CGRect(x: 0, y: 0, width: size, height: size)
+        myView.center = view.center
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func didPinch(_ sender: UIPinchGestureRecognizer) {
+        if(sender.state == .changed){
+            let scale = sender.scale
+            myView.frame = CGRect(x: 0, y: 0, width: size*scale, height: size*scale)
+            myView.center = view.center
+            
+        }
     }
-    */
-
+    
 }

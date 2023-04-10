@@ -128,7 +128,11 @@
                     <navigationItem key="navigationItem" id="iPc-il-nsf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2yC-2W-O5Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <pinchGestureRecognizer id="r8J-NL-g8x"/>
+                <pinchGestureRecognizer id="r8J-NL-g8x">
+                    <connections>
+                        <action selector="didPinch:" destination="Jbs-h9-TKo" id="tb2-UE-fXe"/>
+                    </connections>
+                </pinchGestureRecognizer>
                 <rotationGestureRecognizer id="htv-pB-Bfk"/>
                 <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="TKs-dj-Oc9"/>
             </objects>
